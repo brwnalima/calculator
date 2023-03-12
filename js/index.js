@@ -7,10 +7,8 @@ const btn = document.querySelector('div.calculator__keys');
 
 btn.addEventListener('click', e => {
     if (e.target.matches('button.number')) {
-        const btnContent = e.target.textContent
-        let eu = display.textContent
-        display.textContent = btnContent
-
+            const btnContent = e.target.textContent
+            display.textContent = btnContent
     }
 })
 
