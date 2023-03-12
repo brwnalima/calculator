@@ -12,31 +12,18 @@ btn.addEventListener('click', e => {
     const keyContent = key.textContent
     const displayedNum = display.textContent
     let n1
-    let n2 = 2
+    let n2
+    let operatorPressed = false;
 
-    const somar = (numUm, numDois) => {
-        let resultado = numUm + numDois
-        return alert(resultado)
-    }
-    /*  
-      const subtrair = () => {
-          console.log("subtraindo");
-      }
-      
-      const multiplicar = () => {
-          console.log("multiplicando");
-      }
-      
-      const dividir = () => {
-          console.log("dividindo");
-      }
-  */
+    const somar = (numUm, numDois) => numUm + numDois
 
     if (key.matches('button.key--operator')) {
+        operatorPressed = true
+        display.textContent = '0'
 
         switch (action) {
             case "add":
-                display.textContent = somar(n1, n2)
+                somar(n1, n2)
                 break;
             case "subtract":
                 alert("somar")
@@ -53,20 +40,22 @@ btn.addEventListener('click', e => {
     }
 
     if (key.matches('button.number')) {
-
-        if (displayedNum === '0') {
-            display.textContent = keyContent
-            n1 = display.textContent
+        if (!operatorPressed) {
+            n1 = parseInt(displayedNum + keyContent);
+            display.textContent = n1;
         } else {
-            display.textContent = displayedNum + keyContent
-            n1 = display.textContent
+            n2 = parseInt(displayedNum + keyContent);
+            display.textContent = n2;
         }
     }
+
+
 
     if (key.matches('button.clear')) {
         display.textContent = 0
         n1 = 0
         n2 = 0
+        operatorPressed = false
     }
 
     if (key.matches('button.decimal')) {
@@ -76,11 +65,22 @@ btn.addEventListener('click', e => {
     console.log(n1);
     console.log(n2);
 
-
 })
 
+
 /*
+    
+    O SOMAR ESTÁ FUNCIONANDO MAIS OU MENOS, AINDA N CONSEGUI DEFINIR O N2
 
-
-*/
-
+      const subtrair = () => {
+          console.log("subtraindo");
+      }
+      
+      const multiplicar = () => {
+          console.log("multiplicando");
+      }
+      
+      const dividir = () => {
+          console.log("dividindo");
+      }
+  */
