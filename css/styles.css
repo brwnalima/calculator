@@ -8,7 +8,7 @@
     border-radius: 10px;
     width: 30%;
     margin: auto;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .display {
@@ -33,23 +33,26 @@ button {
 
 button:hover {
     background-color: #ddd;
-    scale: 1;
     transition: 0.1s ease-in-out;
 }
 
 .number {
     background-color: #f8f8f8;
+    height: 80px;
 }
 
 .number:hover {
-    background-color: #fff;
+    background-color: #ffffff;
 }
 
 .clear {
-    grid-column: span 2;
-    grid-row: span 1;
     background-color: #ff6666;
     color: #fff;
+}
+
+.clear:hover {
+    background-color: #f84848;
+    transition: 0.1s ease-in-out;
 }
 
 .key--equal {
