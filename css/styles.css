@@ -64,3 +64,25 @@ button:hover {
 .key--equal:hover {
     background-color: #4aca4a;
 }
+
+@media screen and (max-width: 575px) {
+    .calculator__keys {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      width: 80%;
+      grid-gap: 5px;
+      margin-top: 25%;
+    }
+    .number {
+      height: 80px;
+      grid-gap: 5px;
+    }
+    button {
+      font-size: 18px;
+    }
+    .display {
+      font-size: 18px;
+      padding: 30px;
+      grid-column: 1 / -1;
+    }
+  }
